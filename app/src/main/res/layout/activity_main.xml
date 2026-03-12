@@ -5,34 +5,47 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E4759B"
+    android:backgroundTint="#E44D7F"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/displayText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_width="269dp"
+        android:layout_height="71dp"
+        android:fontFamily="cursive"
+        android:text=" Welcome, "
+        android:textColor="#F2E9E9"
+        android:textSize="48sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.767"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.486" />
 
     <EditText
         android:id="@+id/nameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:fontFamily="cursive"
         android:inputType="text"
-        android:text="Name"
+        android:text="Leelah"
+        android:textColor="#E9E2E2"
+        android:textSize="24sp"
+        android:textStyle="bold"
         tools:layout_editor_absoluteX="45dp"
         tools:layout_editor_absoluteY="45dp" />
 
     <Button
         android:id="@+id/buttonText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="148dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#D10D3E"
         android:text="Click Me!"
-        tools:layout_editor_absoluteX="165dp"
-        tools:layout_editor_absoluteY="584dp" />
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="585dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
