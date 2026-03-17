@@ -48,4 +48,12 @@
         tools:layout_editor_absoluteX="131dp"
         tools:layout_editor_absoluteY="585dp" />
 
+    <Switch
+        android:id="@+id/zuluSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zulu"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="174dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

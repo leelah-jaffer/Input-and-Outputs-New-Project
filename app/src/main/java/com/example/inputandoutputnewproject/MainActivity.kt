@@ -3,6 +3,7 @@ package com.example.inputandoutputnewproject
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -11,7 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "UseSwitchCompatOrMaterialCode")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     }
         setContentView(R.layout.activity_main)
 
-    //Get the Text View using ID and edit Text
+        //Get the Text View using ID and edit Text
     val welcomeTextView =
         findViewById<TextView>(R.id.displayText)
     val nameEditText = findViewById<TextView>(R.id.nameText)
@@ -35,14 +36,28 @@ class MainActivity : AppCompatActivity() {
     //Add code to the button that happens when clicked
     clickMeButton.setOnClickListener {
         welcomeTextView.text = "Welcome, ${nameEditText}.text}!"
-    }
+
+        //get the switch that turns on the zulu greeting
+        val zuluSwitch = findViewById<Switch>(R.id.zuluSwitch)
+
+        // add the code to the button
+        clickMeButton?.setOnClickListener {
+            var greeting: String
+            if (zuluSwitch.isChecked) {
+                greeting = "Sawubona, ${nameEditText.text}!"
+            } else {
+                greeting = "greetings, ${nameEditText.text}!"
+            }
+            welcomeTextView.text = greeting
 
 
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+                val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+                insets
+                }
+            }
         }
     }
 }
