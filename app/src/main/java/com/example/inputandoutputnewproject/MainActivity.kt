@@ -46,7 +46,12 @@ class MainActivity : AppCompatActivity() {
             if (zuluSwitch.isChecked) {
                 greeting = "Sawubona, ${nameEditText.text}!"
             } else {
-                greeting = "greetings, ${nameEditText.text}!"
+                // easter egg for Aqeelah
+                if (nameEditText.text.toString() == "Aqeelah") {
+                    greeting = "Yo, ${nameEditText.text}!"
+                } else {
+                    greeting = "greetings, ${nameEditText.text}!"
+                }
             }
             welcomeTextView.text = greeting
 
