@@ -43,17 +43,20 @@ class MainActivity : AppCompatActivity() {
         // add the code to the button
         clickMeButton?.setOnClickListener {
             var greeting: String
-            if (zuluSwitch.isChecked) {
+            var zulu: Boolean = zuluSwitch.isChecked
+            if (zulu) {
                 greeting = "Sawubona, ${nameEditText.text}!"
             } else {
                 // easter egg for Aqeelah
-                if (nameEditText.text.toString() == "Aqeelah") {
+                if (nameEditText.text.toString() == "Aqeelah" ||
+                    nameEditText.text.toString()== "Sam") {
                     greeting = "Yo, ${nameEditText.text}!"
                 } else {
                     greeting = "greetings, ${nameEditText.text}!"
                 }
             }
             welcomeTextView.text = greeting
+
 
 
 
