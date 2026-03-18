@@ -12,13 +12,13 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
-    @SuppressLint("SetTextI18n", "UseSwitchCompatOrMaterialCode")
+    @SuppressLint("SetTextI18n", "UseSwitchCompatOrMaterialCode", "MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
     //Get Button using ID
-    val clickMeButton = findViewById<Button>(R.id.buttonText)
+    val clickMeButton = findViewById<Button>(R.id.clickMeButton)
 
     //Add code to button
     clickMeButton?.setOnClickListener{
@@ -42,14 +42,16 @@ class MainActivity : AppCompatActivity() {
 
         // add the code to the button
         clickMeButton?.setOnClickListener {
-            var greeting: String
+            var greeting : String
             var zulu: Boolean = zuluSwitch.isChecked
+            val age = 18
             if (zulu) {
                 greeting = "Sawubona, ${nameEditText.text}!"
             } else {
                 // easter egg for Aqeelah
-                if (nameEditText.text.toString() == "Aqeelah" ||
-                    nameEditText.text.toString()== "Sam") {
+                if ((nameEditText.text.toString() == "Aqeelah" ||
+                    nameEditText.text.toString() == "Sam")
+                && age > 18) {
                     greeting = "Yo, ${nameEditText.text}!"
                 } else {
                     greeting = "greetings, ${nameEditText.text}!"
